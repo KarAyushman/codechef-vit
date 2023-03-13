@@ -1,0 +1,94 @@
+.parent-container{
+    background-image: url("./../res/img/background.png");
+    background-color: #cccccc;
+    height: 100vh; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.login-card{
+    background-color: white;
+    width:20lh;
+    margin-right: 100px;
+    height: 80vh;
+    border-radius: 15px;
+    display: flex;
+
+}
+
+.card-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-container form{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container input{
+    border: 1px solid gray;;
+    border-radius: 15px;
+    height: 25px;
+    padding: 5px 10px;
+    margin: 5px;
+    color: black;
+    font-size: 16px;
+}
+
+
+.card-container input[type="submit"]{
+    background-color: #5a4235;
+    color: white;
+    margin-top: 25px;
+    width: 150px;
+    height: 35px;
+    font-size: 18px;
+}
+
+.card-container input[type="submit"]:hover{
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.card-container h1{
+    font-size: 42px;
+    margin: 0px;
+}
+.card-container h2{
+    font-size:20px;
+    margin: 0px;
+}
+.card-container h3{
+    margin: 5px 0px 0px 0px;
+    font-size:16px;
+    font-style: italic;
+    color: darkgray;
+}
+.card-container img{
+    width: 150px;
+    height: 150px;
+}
+.redirect{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: darkgray !important;
+    text-decoration: none !important;
+}
+.redirect:hover{
+    opacity: 0.5;
+}
+.redirect:active{
+    color: black !important;
+}
