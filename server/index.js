@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs')
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect('mongodb://127.0.0.1:27017/codechef')
+mongoose.connect('mongodb+srv://karayushman:PY2jkeVzKJI2A2GP@cluster0.sbfg6vd.mongodb.net/?retryWrites=true&w=majority')
 
 app.post('/api/register', async (req, res) => {
     console.log(req.body)
@@ -24,7 +24,9 @@ app.post('/api/register', async (req, res) => {
             await User.create({
                 name: req.body.name,
                 email: req.body.email,
-                password: newPassword,        
+                password: newPassword,  
+                regDate: req.body.date,
+                logDate: "",      
             })
             res.json({ status: 'ok', registered: true })
         }
@@ -36,7 +38,9 @@ app.post('/api/register', async (req, res) => {
 })
 
 app.post('/api/login', async (req, res) => {
-    const user = await User.findOne({ email: req.body.email })
+    var today = new Date(),
+    date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear() + '-' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds()
+    const user = await User.findOneAndUpdate({ email: req.body.email },{logDate: date})
     if(!user){
         return res.json({status:'error', error: 'User not Found', user:false}); 
     }
@@ -63,6 +67,15 @@ app.post('/api/auth', async (req, res) => {
             return res.json({ status: 'ok', user:true})
         }
     });
+})
+
+app.get('/api/allUsers', async (req, res) => {
+    try{
+        const allUsers = await User.find({})
+        res.json({status:'ok', data:allUsers})
+    }catch(err){
+        console.log(err)
+    }
 })
 
 app.listen(1898, ()=> {

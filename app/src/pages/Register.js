@@ -32,6 +32,8 @@ function Landing() {
 
     async function registerUser(event) {
       event.preventDefault()
+      var today = new Date(),
+      date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear() + '-' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds()
       const response = await fetch('http://localhost:1898/api/register',{
         method: 'POST',
         headers:{
@@ -41,6 +43,7 @@ function Landing() {
           name,
           email,
           password,
+          date,
         }),
       })
         

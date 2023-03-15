@@ -1,0 +1,54 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+}
+th,td {
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+.user-card{
+    width: auto;
+    height: 75vh;
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dash{
+    background-image: url("./../res/img/background1.jpg");
+    width: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-btn{
+    margin-top: 25px;
+    width: 150px;
+    text-align: center;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    font-size: 18px;
+    height: 50px;
+    text-decoration: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.logout-btn:hover{
+    background-color: black;
+    color: white;
+    
+}
