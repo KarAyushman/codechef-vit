@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs')
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect('mongodb://localhost:27017/codechef')
+mongoose.connect('mongodb+srv://karayushman:0wsTQh11AhYgbNcs@cluster0.sbfg6vd.mongodb.net/?retryWrites=true&w=majority')
 
 app.post('/api/register', async (req, res) => {
     console.log(req.body)
