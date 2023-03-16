@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs')
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect('mongodb+srv://karayushman:PY2jkeVzKJI2A2GP@cluster0.sbfg6vd.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect('mongodb://localhost:27017/codechef')
 
 app.post('/api/register', async (req, res) => {
     console.log(req.body)
@@ -49,7 +49,7 @@ app.post('/api/login', async (req, res) => {
         const token = jwt.sign({
             name: user.name,
             email: user.email,
-        }, 'Ayushman1971')
+        }, 'DH(f2@Ez(Fb_8;%f/1-1CX^.O{70.M')
         return res.json({ status:'ok', user: token })
     }
     else{
@@ -59,7 +59,7 @@ app.post('/api/login', async (req, res) => {
 })
 
 app.post('/api/auth', async (req, res) => {
-    jwt.verify(req.body.token, 'Ayushman1971', function(err, decoded) {
+    jwt.verify(req.body.token, 'DH(f2@Ez(Fb_8;%f/1-1CX^.O{70.M', function(err, decoded) {
         if (err) {
             return res.json({ status: 'illegal', user:false})
         }
@@ -80,5 +80,4 @@ app.get('/api/allUsers', async (req, res) => {
 
 app.listen(1898, ()=> {
     console.log('listening on 1898')
-    
 })
